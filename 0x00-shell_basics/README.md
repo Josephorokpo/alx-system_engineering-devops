@@ -1,6 +1,4 @@
-My shell basics readme!
-The following instructions describe the scripts in the completed tasks.
-
+The following instructions describe how the shell basics scrips are created:
 
 0. Where am I?
 Write a script that prints the absolute path name of the current working directory.
@@ -28,10 +26,12 @@ Move the file betty from /tmp/ to /tmp/my_first_directory.
 
 8. Bye bye Betty
 Delete the file betty.
-The file betty is in /tmp/my_first_directory
+
+The file betty is in /tmp/my_first_directory.
 
 9. Bye bye My first directory
 Delete the directory my_first_directory that is in the /tmp directory.
+
 
 10. Back to the future
 Write a script that changes the working directory to the previous one.
@@ -48,25 +48,21 @@ Create a symbolic link to /bin/ls, named __ls__. The symbolic link should be cre
 14. Copy HTML files
 Create a script that copies all the HTML files from the current working directory to the parent of the working directory, but only copy files that did not exist in the parent of the working directory or were newer than the versions in the parent of the working directory.
 
-echoYou can consider that all HTML files have the extension .html
-
 15. Let’s move
-#advanced
 Create a script that moves all files beginning with an uppercase letter to the directory /tmp/u.
 
- 
+You can assume that the directory /tmp/u will exist when we will run your script.
+
 16. Clean Emacs
-#advanced
 Create a script that deletes all files in the current working directory that end with the character ~.
 
 17. Tree
-#advanced
 Create a script that creates the directories welcome/, welcome/to/ and welcome/to/school in the current directory.
 
+You are only allowed to use two spaces (and lines) in your script, not more.
+
 18. Life is a series of commas, not periods
-#advanced
 Write a command that lists all the files and directories of the current directory, separated by commas (,).
 
 19. File type: School
-#advanced
 Create a magic file school.mgc that can be used with the command file to detect School data files. School data files always contain the string SCHOOL at offset 0.
