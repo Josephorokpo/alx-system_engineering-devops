@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script displays information about users from /etc/passwd
+
+while IFS=: read -r username _ userid groupid info homepath shell; do
+    # Extract additional information from the info field
+    IFS=, read -r name other_info <<< "$info"
+
+    # Extract user ID details
+    id_info=$(awk -F: -v user="$username" '$1 == user {print $2}' /etc/passwd)
+
+    # Display user information
+    echo "The user $name is part of the $groupid gang, lives in $homepath, and rides $shell."
+    echo "User ID's place is protected by the passcode $id_info, more info about the user here: $other_info"
+    echo
+done < /etc/passwd
