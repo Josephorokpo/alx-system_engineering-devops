@@ -11,9 +11,9 @@ else
   regex = /\Ah.n\z/
 
   # Check if the input string matches the regular expression
-  if input_string =~ regex
-    puts '$'
+  if input_string.match?(regex)
+    puts "The input string '#{input_string}' matches the pattern."
   else
-    puts "#{input_string}$"
+    puts "The input string '#{input_string}' does not match the pattern."
   end
 end
