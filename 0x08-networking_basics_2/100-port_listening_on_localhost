@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script listens on port 98 on localhost.
+
+# Check if netcat is installed
+if ! command -v nc &>/dev/null; then
+  echo "Error: netcat is not installed. Please install it before running this script."
+  exit 1
+fi
+
+# Start listening on port 98
+echo "Listening on port 98. Connect using: telnet localhost 98"
+nc -l -p 98
