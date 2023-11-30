@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script configures an Ubuntu server to meet specific DNS resolution requirements.
+
+# Update the hosts file to set localhost to 127.0.0.2
+sudo sed -i 's/127.0.0.1 localhost/127.0.0.2 localhost/' /etc/hosts
+
+# Update the hosts file to set facebook.com to 8.8.8.8
+sudo sed -i '/facebook.com/d' /etc/hosts  # Remove existing entry if present
+echo '8.8.8.8 facebook.com' | sudo tee -a /etc/hosts > /dev/null
+
+# Display the updated hosts file
+cat /etc/hosts
