@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays all active IPv4 IPs on the machine it's executed on.
+
+# Use ifconfig to retrieve network interface information
+ifconfig_result=$(ifconfig)
+
+# Extract and display IPv4 addresses using grep and awk
+ipv4_addresses=$(echo "$ifconfig_result" | grep -oP 'inet\s+\K[\d.]+')
+
+# Display the list of active IPv4 addresses
+echo "Active IPv4 Addresses:"
+echo "$ipv4_addresses"
