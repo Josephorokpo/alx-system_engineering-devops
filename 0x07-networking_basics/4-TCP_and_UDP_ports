@@ -1,27 +1,5 @@
 #!/usr/bin/env bash
+# Displays listening ports. Includes listening sockets too
+# + as the PID and name of the program to which each socket belongs.
 
-# Display listening sockets with PID and program name
-
-# Check if user has root privileges
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run with sudo or as root."
-    exit 1
-fi
-
-# Display headers
-echo "Active Internet connections (only servers)"
-echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
-
-# Use netstat to display listening sockets
-netstat -tuln | grep -e 'LISTEN' | awk '{print $1, $4, $7}' | while read line; do
-    proto=$(echo $line | awk '{print $1}')
-    local_addr=$(echo $line | awk '{print $2}')
-    pid_program=$(echo $line | awk '{print $3}')
-    
-    # Get PID and program name
-    pid=$(echo $pid_program | cut -d'/' -f1)
-    program=$(ps -p $pid -o comm=)
-
-    # Display the information
-    echo "$proto        $local_addr                     $pid_program       $program"
-done
+netstat -l --program
