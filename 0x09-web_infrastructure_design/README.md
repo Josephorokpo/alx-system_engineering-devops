@@ -37,7 +37,7 @@ You must use:
 #1-distributed_web_infrastructure
 On a whiteboard, design a three servers web infrastructure that host the website www.foobar.com.
 
-You must add to 0-simple_web_stack:
+You must add to [0-simple_web_stack](https://imgur.com/VlzoGUW):
 
 2 physical servers
 
