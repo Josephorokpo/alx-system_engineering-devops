@@ -63,7 +63,7 @@ You must add to [1-distributed_web_infrastructure](1-distributed_web_infrastruct
 3 monitoring clients (data collector for Sumologic or other monitoring services)
 
 #3-scale_up
-You must add to 2-secured_and_monitored_web_infrastructure:
+You must add to [2-secured_and_monitored_web_infrastructure](2-secured_and_monitored_web_infrastructure):
 
 1 physical server
 
