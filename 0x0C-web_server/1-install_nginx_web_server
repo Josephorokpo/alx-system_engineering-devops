@@ -8,7 +8,7 @@ sudo apt-get update
 sudo apt-get install nginx
 
 # Allow Nginx traffic through the firewall
-sudo ufw allow 'Nginx HTTP'
+sudo ufw 'Nginx HTTP'
 
 # Display a message to confirm the installation
 echo "Hello World!" | sudo tee /var/www/html/index.html
