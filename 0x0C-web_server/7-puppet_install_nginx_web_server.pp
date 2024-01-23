@@ -16,5 +16,5 @@ file { '/var/www/html/index.html':
 
 service { 'nginx':
   ensure  => running,
-  require =>  package{'nginx'},
+  require =>  package['nginx'],
 }
