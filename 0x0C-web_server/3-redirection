@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#using sed command to perform redirections
+
+# Update package information
+sudo apt-get update
+
+# Install Nginx
+sudo apt-get install -y nginx
+
+# Create a simple HTML file
+echo "Hello world!" | sudo tee /var/www/html/index.html
+
+# Define the string for replacement
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/josephorokpo permanent;"
+
+# Use sed to perform the replacement in the specified file
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+sudo service nginx restart
