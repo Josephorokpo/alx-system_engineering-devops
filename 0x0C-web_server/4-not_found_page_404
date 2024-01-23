@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#custom 404 page that contains the string Ceci n'est pas une page
+
+# Update package information
+sudo apt-get update
+
+# Install Nginx
+sudo apt-get install -y nginx
+
+# Create a simple HTML file
+echo "Hello world!" | sudo tee /var/www/html/index.html
+
+# Define the string for replacement
+string_for_replacement="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/josephorokpo permanent;"
+
+# Use sed to perform the replacement in the specified file
+sudo sed -i "s/server_name _;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+#creating a 404 error page
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+
+string_for_replacement="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var/www/html;\n\t\tinternal;\n\t}"
+
+sudo sed -i "s/listen 80 default_server;/$string_for_replacement/" /etc/nginx/sites-enabled/default
+
+# restart nginx after the implemented changes
+sudo service nginx restart
