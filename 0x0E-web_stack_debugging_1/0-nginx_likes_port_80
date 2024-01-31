@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-# Configure Nginx to listen on port 80 indirectly
-
-# Step 1: Remove any existing symbolic link named 'default' to avoid conflicts
-cd /etc/nginx/sites-enabled/ || exit;
-rm default;
-
-# Step 2: Create a symbolic link named 'default' pointing to the default Nginx configuration file
-ln -s /etc/nginx/sites-available/default default;
-
-# Step 3: Restart Nginx to apply the updated configuration
+# Correct Nginx configuration to listen on port 80
+# Navigate to the directory containing Nginx enabled sites configurations
+cd /etc/nginx/sites-enabled/ || exit;                                                                                                                             
+# Remove the default configuration file
+rm default;                                                                                                                                               
+# Create a symbolic link to the default configuration file in the sites-available directory
+ln -s /etc/nginx/sites-available/default default;                                                                                                         
+# Restart the Nginx service
 service nginx restart
