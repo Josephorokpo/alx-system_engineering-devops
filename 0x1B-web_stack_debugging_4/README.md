@@ -14,3 +14,7 @@ This is another task within a series of web stack debugging projects. In each in
 1. User limit
 
 1-user_limit.pp: Puppet manifest that changes the operating system configuration so that it is possible to login with the user holberton and open a file without error.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2cbf943962c3425de4943723e68d17ceae175ec7
